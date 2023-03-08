@@ -377,6 +377,7 @@
     <Content Include="Views\BookStore\Index.cshtml" />
     <Content Include="Views\BookStore\LayChuDe.cshtml" />
     <Content Include="Views\BookStore\LayNhaXuatBan.cshtml" />
+    <Content Include="Views\BookStore\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
