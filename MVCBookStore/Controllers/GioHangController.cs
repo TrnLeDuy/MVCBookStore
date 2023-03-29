@@ -79,5 +79,37 @@ namespace MVCBookStore.Controllers
             ViewBag.TongTien = TinhTongTien();
             return PartialView();
         }
+
+        public ActionResult XoaMatHang(int MaSP)
+        {
+            List<MatHangMua> gioHang = LayGioHang();
+
+            //Lấy sản phẩm trong giỏ hàng
+            var sanpham = gioHang.FirstOrDefault(s => s.MaSach == MaSP);
+            if(sanpham != null)
+            {
+                gioHang.RemoveAll(s => s.MaSach == MaSP);
+                return RedirectToAction("HienThiGioHang"); //Quay về trang giỏ hàng
+            }
+            if (gioHang.Count == 0) //Quay về trang chủ nếu giỏ hàng không có gì
+                return RedirectToAction("Index", "BookStore");
+            return RedirectToAction("HienThiGioHang");
+        }
+
+        //Bổ sung hàm cập nhật
+        public ActionResult CapNhatMatHang(int MaSP, int SoLuong)
+        {
+            List<MatHangMua> gioHang = LayGioHang();
+            //Lấy sản phẩm trong giỏ hàng
+            var sanpham = gioHang.FirstOrDefault(s => s.MaSach == MaSP);
+
+            if(sanpham != null)
+            {
+                //Cập nhật lại số lượng tương ứng
+                //Lưu ý số lượng phải lớn hơn hoặc bằng 1
+                sanpham.SoLuong = SoLuong;
+            }
+            return RedirectToAction("HienThiGioHang"); //Quay về trang giỏ hàng
+        }
     }
 }
