@@ -385,6 +385,8 @@
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\GioHang\HienThiGioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\HoanThanhDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

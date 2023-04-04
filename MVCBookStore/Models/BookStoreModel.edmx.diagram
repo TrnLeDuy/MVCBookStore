@@ -7,11 +7,11 @@
       <Diagram DiagramId="53d20d84154148e9acbc0b7b04e1c02a" Name="Diagram1">
         <EntityTypeShape EntityType="bookstoreDBModel.CHUDE" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreDBModel.CTDATHANG" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bookstoreDBModel.DONDATHANG" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="bookstoreDBModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookstoreDBModel.DONDATHANG" Width="1.5" PointX="7.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookstoreDBModel.KHACHHANG" Width="1.5" PointX="5.875" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreDBModel.NHAXUATBAN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreDBModel.SACH" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bookstoreDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookstoreDBModel.sysdiagram" Width="1.5" PointX="0.5" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreDBModel.TACGIA" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreDBModel.VIETSACH" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="bookstoreDBModel.FK__SACH__MaCD__3E52440B" ManuallyRouted="false" />

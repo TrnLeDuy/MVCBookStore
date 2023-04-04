@@ -23,7 +23,7 @@
     <tbody>
         @foreach (var sach in Model)
         {
-       <tr>
+        <tr>
             <td>@sach.MaSach</td>
             <td>@sach.TenSach</td>
             <td><img src="~/Images/@sach.AnhBia" style="width:100%" /></td>
@@ -38,13 +38,19 @@
                 <td>
                     <button type="submit" class="btn btn-primary">Cập nhật</button>
                 </td>
-                <td>@Html.ActionLink("Xóa hàng", "XoaMatHang", "GioHang", new { MaSP = sach.MaSach }, new { @class = "btn btn-danger" })</td>
+
             }
-       </tr>
+            <td>@Html.ActionLink("Xóa hàng", "XoaMatHang", "GioHang", new { MaSP = sach.MaSach }, new { @class = "btn btn-danger" })</td>
+        </tr>
         }
         <tr style="font-weight: bold; text-align:right; color: red;">
              <td colspan="4">Tổng số lượng: @ViewBag.TongSL</td>
              <td colspan="5">Tổng tiền: @ViewBag.TongTien</td>
+        </tr>
+        <tr style="font-weight:bold; text-align: center;">
+            <td colspan="9">
+                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new { @class = "btn btn-primary"})
+            </td>
         </tr>
     </tbody>
 </table>
