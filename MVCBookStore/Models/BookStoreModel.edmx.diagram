@@ -21,6 +21,7 @@
         <AssociationConnector Association="bookstoreDBModel.FK__SACH__MaNXB__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="bookstoreDBModel.FK__VIETSACH__Masach__44FF419A" ManuallyRouted="false" />
         <AssociationConnector Association="bookstoreDBModel.FK__VIETSACH__MaTG__440B1D61" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bookstoreDBModel.ADMIN" Width="1.5" PointX="8.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

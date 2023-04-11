@@ -247,3 +247,7 @@ D:\THDA_Duy\MVCBookStore\MVCBookStore\obj\Debug\MVCBookStore.csproj.CoreCompileI
 D:\THDA_Duy\MVCBookStore\MVCBookStore\obj\Debug\MVCBookStore.csproj.CopyComplete
 D:\THDA_Duy\MVCBookStore\MVCBookStore\obj\Debug\MVCBookStore.dll
 D:\THDA_Duy\MVCBookStore\MVCBookStore\obj\Debug\MVCBookStore.pdb
+E:\web\MVCBookStore\MVCBookStore\bin\PagedList.dll
+E:\web\MVCBookStore\MVCBookStore\bin\PagedList.Mvc.dll
+E:\web\MVCBookStore\MVCBookStore\bin\PagedList.xml
+E:\web\MVCBookStore\MVCBookStore\bin\PagedList.Mvc.xml

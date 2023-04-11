@@ -303,3 +303,7 @@ INSERT [dbo].[CTDATHANG] ([SoDH], [Masach], [Soluong], [Dongia]) VALUES (1, 19, 
 INSERT [dbo].[CTDATHANG] ([SoDH], [Masach], [Soluong], [Dongia]) VALUES (1, 23, 2, 25000)
 INSERT [dbo].[CTDATHANG] ([SoDH], [Masach], [Soluong], [Dongia]) VALUES (2, 1, 1, 26000)
 INSERT [dbo].[CTDATHANG] ([SoDH], [Masach], [Soluong], [Dongia]) VALUES (2, 17, 3, 18000)
+
+
+INSERT INTO ADMIN VALUES ('admin', 'admin', 'Nguyễn Văn A', 'ADMIN')
+INSERT INTO ADMIN VALUES ('user', 'user', 'Nguyễn Văn B', 'ADMIN')

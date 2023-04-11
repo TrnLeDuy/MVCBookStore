@@ -101,3 +101,10 @@ CREATE TABLE CTDATHANG
 	FOREIGN KEY (SoDH) REFERENCES DONDATHANG(SoDH)
 );
 
+CREATE TABLE [dbo].[ADMIN]
+(
+	[UserAdmin] varchar(30) NOT NULL PRIMARY KEY,
+	[PassAdmin] varchar(30) NOT NULL,
+	[HoTen] nvarchar(50),
+	[VaiTro] nvarchar(30)
+)
