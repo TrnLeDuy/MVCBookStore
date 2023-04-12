@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -48,7 +49,18 @@ namespace MVCBookStore.Controllers
                 }
             }
             return View();
-
         }
+
+        // Admin Logout
+        public ActionResult Logout()
+        {   
+            //Perform any necessary cleanup or logging out of the user
+            //Remove any authentication cookies or session state information
+            //Redirect the user to the login page
+            Session["Admin"] = null;
+            Session.Abandon();
+            return RedirectToAction("Login", "Admin");
+        }
+
     }
 }
