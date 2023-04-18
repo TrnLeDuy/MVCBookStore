@@ -74,8 +74,19 @@ namespace MVCBookStore.Controllers
             pageSize));
         }
 
+        [HttpGet]
         public ActionResult ThemSach()
         {
+            ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
+            ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ThemSach2()
+        {
+            ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
+            ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
             return View();
         }
     }
