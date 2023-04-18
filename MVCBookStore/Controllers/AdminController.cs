@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MVCBookStore.Controllers
 {
@@ -62,5 +63,20 @@ namespace MVCBookStore.Controllers
             return RedirectToAction("Login", "Admin");
         }
 
+        public ActionResult Sach(int? page)
+        {
+            var dsSach = database.SACHes.ToList();
+            //Tạo biến cho biết số sách mỗi trang
+            int pageSize = 7;
+            //Tạo biến số trang
+            int pageNum = (page ?? 1);
+            return View(dsSach.OrderBy(sach => sach.Masach).ToPagedList(pageNum,
+            pageSize));
+        }
+
+        public ActionResult ThemSach()
+        {
+            return View();
+        }
     }
 }
