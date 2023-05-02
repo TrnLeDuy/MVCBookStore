@@ -1,0 +1,99 @@
+﻿@model MVCBookStore.Models.SACH
+
+@{
+    ViewBag.Title = "ChiTietSach";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ChiTietSach</h2>
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tensach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donvitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinhminhhoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinhminhhoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaycapnhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaycapnhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluongban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.solanxem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.solanxem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHUDE.TenChuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHAXUATBAN.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.TenNXB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Masach }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

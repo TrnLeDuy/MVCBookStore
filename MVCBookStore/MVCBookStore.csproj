@@ -410,6 +410,8 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Sach.cshtml" />
+    <Content Include="Views\Admin\ThemSach.cshtml" />
+    <Content Include="Views\Admin\ChiTietSach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -78,25 +78,38 @@ namespace MVCBookStore.Controllers
         [HttpPost]
         public ActionResult ThemSach (SACH sach, HttpPostedFileBase Hinhminhhoa)
         {
-            //Lấy tên file của hình được up lên
-            var fileName = Path.GetFileName(Hinhminhhoa.FileName);
+            ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
+            ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
 
-            //Tạo đường dẫn tới file
-            var path = Path.Combine(Server.MapPath("~/Images"), fileName);
-
-            //Kiểm tra hình đã tồn tại trong hệ thống chưa
-            if(System.IO.File.Exists(path))
+            if(Hinhminhhoa == null)
             {
-                ViewBag.ThongBao = "Hình đã tồn tại";
+                ViewBag.ThongBao = "Vui lòng chọn ảnh bìa";
+                return View();
             }
             else
             {
-                Hinhminhhoa.SaveAs(path);
-            }
+                if (ModelState.IsValid)
+                {
+                    var fileName = Path.GetFileName(Hinhminhhoa.FileName);
 
-            ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
-            ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
-            return View();
+                    //Tạo đường dẫn tới file
+                    var path = Path.Combine(Server.MapPath("~/Images"), fileName);
+
+                    //Kiểm tra hình đã tồn tại trong hệ thống chưa
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.ThongBao = "Hình đã tồn tại";
+                    }
+                    else
+                    {
+                        Hinhminhhoa.SaveAs(path);
+                    }
+                    sach.Hinhminhhoa = fileName;
+                    database.SACHes.Add(sach);
+                    database.SaveChanges();
+                }
+            }
+            return RedirectToAction("Sach");
         }
 
         [HttpGet]
@@ -105,6 +118,17 @@ namespace MVCBookStore.Controllers
             ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
             ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
             return View();
+        }
+
+        public ActionResult ChiTietSach(int id)
+        {
+            var sach = database.SACHes.FirstOrDefault(s => s.Masach == id);
+            if (sach == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sach);
         }
     }
 }

@@ -71,10 +71,10 @@
                 @Html.DisplayFor(modelItem => item.Soluongban)
             </td>
             <td style="width: 150px;">
-                @Html.ActionLink("SỬA", "SuaSach", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("CHI TIẾT", "ChiTietSach", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("SỬA", "SuaSach", new { id = item.Masach}) |
+                @Html.ActionLink("CHI TIẾT", "ChiTietSach", new { id = item.Masach })
                 |
-                @Html.ActionLink("XÓA", "XoaSach", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("XÓA", "XoaSach", new { id = item.Masach })
             </td>
         </tr>
     }
