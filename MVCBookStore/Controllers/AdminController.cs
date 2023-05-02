@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.IO;
 
 namespace MVCBookStore.Controllers
 {
@@ -74,16 +75,32 @@ namespace MVCBookStore.Controllers
             pageSize));
         }
 
-        [HttpGet]
-        public ActionResult ThemSach()
+        [HttpPost]
+        public ActionResult ThemSach (SACH sach, HttpPostedFileBase Hinhminhhoa)
         {
+            //Lấy tên file của hình được up lên
+            var fileName = Path.GetFileName(Hinhminhhoa.FileName);
+
+            //Tạo đường dẫn tới file
+            var path = Path.Combine(Server.MapPath("~/Images"), fileName);
+
+            //Kiểm tra hình đã tồn tại trong hệ thống chưa
+            if(System.IO.File.Exists(path))
+            {
+                ViewBag.ThongBao = "Hình đã tồn tại";
+            }
+            else
+            {
+                Hinhminhhoa.SaveAs(path);
+            }
+
             ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
             ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
             return View();
         }
 
         [HttpGet]
-        public ActionResult ThemSach2()
+        public ActionResult ThemSach()
         {
             ViewBag.MaCD = new SelectList(database.CHUDEs.ToList(), "MaCD", "TenChuDe");
             ViewBag.MaNXB = new SelectList(database.NHAXUATBANs.ToList(), "MaNXB", "TenNXB");
